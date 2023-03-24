@@ -31,12 +31,14 @@ public class SkillBuilder4{
             } else if (currentState == NO_Y){
                 if (FINDING_Y.indexOf(ch) > -1){
                     currentState = Y_AND_T;
-                    TYPattern += ch;
-                } else
-                    TYPattern += ch;
                 }
+                TYPattern += ch;
+            }
             index++;
             }
+        if (currentState == NO_Y && currentState != Y_AND_T ){
+            TYPattern = "";
+        }
         return TYPattern;
         }
 
